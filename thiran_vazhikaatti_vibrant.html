@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6c4cf1">
+<title>திறன் வழிகாட்டி | Thiran Vazhikaatti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#202044;--muted:#666783;--bg:#f6f5ff;--card:#fff;--line:#e9e6fa;--purple:#6c4cf1;--pink:#ff5ca8;--blue:#31a9ed;--green:#13b98b;--orange:#ffad42;--shadow:0 12px 35px rgba(58,43,125,.09);box-sizing:border-box}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:radial-gradient(circle at 5% 0%,#eee9ff 0,transparent 30%),radial-gradient(circle at 95% 15%,#ffeaf4 0,transparent 25%),var(--bg);color:var(--ink);font:400 16px/1.65 "Hind Madurai",system-ui,sans-serif}
+button,input{font:inherit}
+.wrap{width:min(1050px,100%);margin:auto;padding:22px 20px 42px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#4e3bb5;font-family:Poppins,"Hind Madurai",sans-serif;font-size:14px}
+.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--purple),#a36bff);display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 7px 18px #7555e544}
+.lang{display:flex;background:#fff;padding:4px;border:1px solid var(--line);border-radius:99px;box-shadow:0 4px 14px #3020600c}
+.lang button{border:0;background:transparent;color:var(--muted);border-radius:99px;padding:7px 14px;cursor:pointer;font-weight:700}
+.lang button[aria-pressed=true]{background:var(--purple);color:white;box-shadow:0 4px 12px #6c4cf155}
+.hero{position:relative;overflow:hidden;border-radius:28px;padding:clamp(24px,5vw,48px);color:white;background:linear-gradient(115deg,#5539d5 0%,#8055ef 55%,#c45bce 100%);box-shadow:0 18px 40px #6848d533}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#ffffff13;pointer-events:none}
+.hero:before{width:260px;height:260px;right:-55px;top:-100px}
+.hero:after{width:180px;height:180px;right:150px;bottom:-125px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;border:1px solid #ffffff55;background:#ffffff19;padding:5px 12px;border-radius:99px;font-size:14px;font-weight:700}
+h1{font:800 clamp(29px,5vw,46px)/1.2 Poppins,"Hind Madurai",sans-serif;margin:18px 0 10px;max-width:720px;letter-spacing:-1px}
+.sub{margin:0;max-width:690px;color:#f5efff;font-size:17px}
+.hero-foot{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+.hero-pill{background:#ffffff20;border:1px solid #ffffff45;border-radius:12px;padding:7px 12px;font-size:14px;font-weight:600}
+.section-title{font:700 20px Poppins,"Hind Madurai",sans-serif;margin:28px 0 12px}
+.picker{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(16px,3vw,25px);box-shadow:var(--shadow)}
+.filter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-weight:700;margin-bottom:10px;color:#35335f}
+.legend-icon{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;margin-right:6px;background:#f0edff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;padding:7px 11px;cursor:pointer;background:#fbfaff;color:#565574;font-size:14px;line-height:1.35;transition:.18s}
+.chips label:hover{border-color:#b8a9ff;background:#f5f1ff}
+.chips input:checked+label{background:#eee9ff;color:#5439ce;border-color:#8068f2;font-weight:700;box-shadow:inset 0 0 0 1px #8068f2}
+.chips input:focus-visible+label{outline:3px solid var(--orange);outline-offset:2px}
+.tools{display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.search-wrap{position:relative;flex:1}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:17px}
+#search{width:100%;border:1.5px solid var(--line);border-radius:13px;background:#fbfaff;padding:11px 14px 11px 42px;outline:none;color:var(--ink)}
+#search:focus{border-color:var(--purple);box-shadow:0 0 0 3px #6c4cf122}
+.reset{border:0;border-radius:13px;background:#fff0f6;color:#c43e7b;padding:11px 15px;font-weight:700;cursor:pointer;white-space:nowrap}
+.reset:hover{background:#ffe2ef}
+.results-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 2px 13px}
+#count{font:700 19px Poppins,"Hind Madurai",sans-serif;margin:0}
+.hint{font-size:13px;color:var(--muted)}
+.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 7px 24px #33206e0a;display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:11px}
+.card-icon{width:48px;height:48px;flex:0 0 48px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:linear-gradient(135deg,#eeeaff,#fceaff)}
+.card h2{font:700 17px/1.4 Poppins,"Hind Madurai",sans-serif;margin:1px 0 0;color:#29264e}
+.badge{display:inline-flex;align-self:flex-start;background:#e4fbf3;color:#07845f;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:9px}
+.who{margin:0 0 8px;font-weight:700;color:#4c4970;font-size:14px}
+.card p{margin:0 0 10px}
+.description{color:#555473}
+.how{color:#6c4cf1;background:#f6f3ff;border-radius:12px;padding:10px 12px;font-size:14px;margin-top:auto!important}
+.go{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:12px;background:linear-gradient(100deg,#6548e9,#9560ee);color:white;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:12px;box-shadow:0 6px 15px #7555e533;transition:.2s}
+.go:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.go:focus-visible,.lang button:focus-visible,.reset:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.empty{grid-column:1/-1;text-align:center;background:white;border:1px dashed #c9bfff;border-radius:20px;padding:30px 18px;color:var(--muted)}
+.empty-icon{font-size:35px;display:block;margin-bottom:8px}
+footer{margin-top:32px;background:#29234f;color:#e9e5ff;border-radius:20px;padding:20px 22px;font-size:14px}
+.cred{margin:12px 0 0;text-align:center;color:#77738f;font-size:13px}
+@media(max-width:760px){.filter-grid{grid-template-columns:1fr;gap:16px}.list{grid-template-columns:1fr}.wrap{padding:14px 13px 30px}.top{margin-bottom:15px}.hero{border-radius:22px}.section-title{margin-top:22px}.card{padding:17px}}
+@media(max-width:420px){body{font-size:15px}.brand{font-size:12px}.brand-mark{width:36px;height:36px}.lang button{padding:7px 10px;font-size:13px}.hero{padding:23px 19px}h1{font-size:29px}.sub{font-size:15px}.tools{align-items:stretch;flex-direction:column}.reset{width:100%}.results-head{align-items:flex-start;flex-direction:column;gap:2px}.hint{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="brand-mark">✦</span><span id="mark"></span></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="bta" aria-pressed="true">தமிழ்</button><button id="ben" aria-pressed="false">English</button>
+    </div>
+  </header>
+  <section class="hero">
+    <span class="eyebrow">🚀 <span id="eyebrow"></span></span>
+    <h1 id="h1"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="hero-foot"><span class="hero-pill" id="pill1">🎯 Explore opportunities</span><span class="hero-pill" id="pill2">🌱 Build your future</span></div>
+  </section>
+  <h2 class="section-title" id="filterTitle">✨ Find your path</h2>
+  <section class="picker" aria-label="Opportunity filters">
+    <div class="filter-grid">
+      <fieldset><legend><span class="legend-icon">📍</span><span id="l1"></span></legend><div class="chips" id="c1"></div></fieldset>
+      <fieldset><legend><span class="legend-icon">🎓</span><span id="l2"></span></legend><div class="chips" id="c2"></div></fieldset>
+      <fieldset><legend><span class="legend-icon">💡</span><span id="l3"></span></legend><div class="chips" id="c3"></div></fieldset>
+    </div>
+    <div class="tools">
+      <div class="search-wrap"><span class="search-icon">🔎</span><input id="search" type="search" autocomplete="off" placeholder="Search courses, schemes or skills..." aria-label="Search opportunities"></div>
+      <button class="reset" id="reset" type="button">↺ Reset filters</button>
+    </div>
+  </section>
+  <div class="results-head"><h2 id="count" aria-live="polite"></h2><span class="hint" id="hint"></span></div>
+  <div class="list" id="list"></div>
+  <footer id="foot"></footer>
+  <p class="cred" id="cred"></p>
+</div>
+<script>
+var T={
+ta:{mark:"சேவா ஃபர்ஸ்ட் புத்தாக்கப் போட்டி",h1:"உங்களுக்கான திறன் வாய்ப்புகள்",sub:"உங்கள் படிப்பையும் விருப்பத் துறையையும் தேர்ந்தெடுங்கள். அருகில் உள்ள பயிற்சிகள், அரசுத் திட்டங்கள், விண்ணப்பிக்கும் வழி ஆகியவற்றை உடனே பாருங்கள்.",
+l1:"எந்தப் பகுதிக்கு?",l2:"உங்கள் கல்வித் தகுதி",l3:"விருப்பமான துறை",cnt:function(n){return n+" வாய்ப்புகள் உங்களுக்காக"},go:"அதிகாரப்பூர்வ தளத்தைத் திறக்க",tn:"தமிழ்நாடு",who:"யார் சேரலாம்: ",empty:"இந்தத் தேர்வுக்குப் பொருந்தும் பட்டியல் இல்லை. வேறு துறையை அல்லது “எல்லாத் துறைகளும்” என்பதைத் தேர்ந்தெடுத்துப் பாருங்கள்.",
+foot:"இது பொது வழிகாட்டி மட்டுமே. தகுதி, தேதிகள், பயிற்சி கிடைப்பது மாறக்கூடும்; விண்ணப்பிக்கும் முன் அதிகாரப்பூர்வ இணையதளத்தில் உறுதிசெய்யுங்கள். கல்வியறிவு & திறன்மிகு பாரதம் கருப்பொருளுக்காக உருவாக்கப்பட்டது.",
+cred:"வடிவமைத்தவர்கள்: Aaruthra K, Dhanushni T, Krubasri B, Rajalakshmi V, Varsha M, 9ஆம் வகுப்பு A, AGMHSS பட்டீஸ்வரம்.",reg:["தமிழ்நாடு","இந்தியா முழுவதும்"],lv:["8ஆம் வகுப்புக்குக் கீழ்","8ஆம் வகுப்பு","10ஆம் வகுப்பு","12ஆம் வகுப்பு","ஐடிஐ / டிப்ளமா","பட்டப்படிப்பு"],
+ar:["எல்லாத் துறைகளும்","மின் / இயந்திரத் தொழில்நுட்பம்","கணினி & ஐடி","சுகாதாரம்","வேளாண்மை","கைவினை & தையல்","அரசு வேலை","சொந்தத் தொழில் & வணிகம்"]},
+en:{mark:"Seva First Innovation Challenge",h1:"Skill options made for you",sub:"Choose your education and the field you like. See nearby training, government schemes and how to apply.",
+l1:"Which region?",l2:"Your education",l3:"Field you like",cnt:function(n){return n+(n==1?" option":" options")+" for you"},go:"Open official site",tn:"Tamil Nadu",who:"Who can join: ",empty:"No match for this choice. Try another field or pick “All fields”.",
+foot:"This is a general guide only. Eligibility, dates and course availability change, so confirm on the official website before applying. Made for the theme Shikshit & Kaushal Bharat.",
+cred:"Designed by Aaruthra K, Dhanushni T, Krubasri B, Rajalakshmi V, Varsha M, Class 9A, AGMHSS Patteeswaram.",reg:["Tamil Nadu","All India"],lv:["Below 8th","8th pass","10th pass","12th pass","ITI / Diploma","Degree"],
+ar:["All fields","Electrical / Mechanical","Computers & IT","Healthcare","Agriculture","Crafts & tailoring","Government jobs","Own business"]}};
+var P=[
+{mi:2,ar:[1,2,5],l:null,tl:"https://skilltraining.tn.gov.in",
+ta:["ஐடிஐ (தொழிற்பயிற்சி நிலையம்)","8 / 10 / 12ஆம் வகுப்பு தேர்ச்சி (தொழிலைப் பொறுத்து)","எலக்ட்ரீஷியன், ஃபிட்டர், வெல்டர், கணினி இயக்குநர் போன்ற 6 மாதம் முதல் 2 ஆண்டு வரையிலான தொழிற்பயிற்சி. அரசு அங்கீகாரச் சான்றிதழ் (NCVT).","உங்கள் மாநில ஐடிஐ சேர்க்கை இணையதளம் மூலம் விண்ணப்பிக்கவும்.","தமிழ்நாடு: skilltraining.tn.gov.in மூலம் ஆன்லைனில் விண்ணப்பிக்கவும்."],
+en:["ITI (Industrial Training Institute)","8th / 10th / 12th pass, depending on the trade","Trade courses of 6 months to 2 years such as Electrician, Fitter, Welder and Computer Operator. Government-recognised certificate (NCVT).","Apply through your state’s ITI admission portal.","Tamil Nadu: apply online at skilltraining.tn.gov.in."]},
+{mi:3,ar:[1,2],l:null,tl:"https://tnpoly.in",
+ta:["பாலிடெக்னிக் டிப்ளமா","10ஆம் வகுப்பு தேர்ச்சி (12ஆம் வகுப்பு / ஐடிஐ முடித்தவர்கள் 2ஆம் ஆண்டில் சேரலாம்)","மெக்கானிக்கல், எலக்ட்ரிக்கல், சிவில், கணினி உள்ளிட்ட 3 ஆண்டு டிப்ளமா. வேலைக்கு அல்லது பொறியியல் பட்டப்படிப்புக்கு வழிவகுக்கும்.","உங்கள் மாநில பாலிடெக்னிக் சேர்க்கை இணையதளம் மூலம் விண்ணப்பிக்கவும்.","தமிழ்நாடு: தேர்வு முடிவுகளுக்குப் பிறகு tnpoly.in இல் விண்ணப்பிக்கவும்."],
+en:["Polytechnic Diploma","10th pass (12th or ITI pass can join in the 2nd year)","3-year diploma in Mechanical, Electrical, Civil, Computer and more. Leads to jobs or to an engineering degree.","Apply through your state’s polytechnic admission portal.","Tamil Nadu: apply online at tnpoly.in after the results."]},
+{mi:2,ar:[1,2,3,4,5,7],l:"https://www.skillindiadigital.gov.in",
+ta:["ஸ்கில் இந்தியா குறுகியகாலப் பயிற்சிகள் (PMKVY)","8ஆம் வகுப்புக்கு மேல் (பயிற்சியைப் பொறுத்து)","ஐடி, சுகாதாரம், விற்பனை, எலக்ட்ரானிக்ஸ், கட்டுமானம் உள்ளிட்ட துறைகளில் சில வாரங்கள் முதல் சில மாதங்கள் வரையிலான இலவச அல்லது குறைந்த கட்டணப் பயிற்சி; சான்றிதழ் வழங்கப்படும்.","ஸ்கில் இந்தியா டிஜிட்டல் தளத்தில் பயிற்சிகளையும் பயிற்சி மையங்களையும் தேடவும்."],
+en:["Skill India short courses (PMKVY)","8th pass and above (depends on the course)","Free or low-cost courses of a few weeks to months in IT, healthcare, retail, electronics, construction and more, with a certificate.","Search courses and training centres on the Skill India Digital portal."]},
+{mi:3,ar:[1,2,5,7],l:"https://www.apprenticeshipindia.gov.in",
+ta:["பணிப்பயிற்சி (கற்றுக்கொண்டே சம்பாதிக்கலாம்)","10ஆம் வகுப்பு, ஐடிஐ, டிப்ளமா அல்லது பட்டம் முடித்தவர்கள்","நிறுவனத்தில் பணியிலேயே கற்றுக்கொண்டு மாதாந்திர உதவித்தொகை பெறலாம். நிலையான வேலைக்கான நல்ல வழி.","அப்ரண்டிஸ்ஷிப் இந்தியா தளத்தில் பதிவு செய்து வாய்ப்புகளைத் தேடவும்."],
+en:["Apprenticeship (earn while you learn)","10th pass, ITI, diploma or degree holders","Learn on the job in a company and receive a monthly stipend. A good route to a steady job.","Register and find openings on the Apprenticeship India portal."]},
+{mi:1,tn:1,ar:[1,2,3,4,5,6,7],l:"https://skilldevelopment.tn.gov.in/",
+ta:["தமிழ்நாடு திறன் மேம்பாட்டுத் துறை","தமிழ்நாட்டு மாணவர்கள் மற்றும் இளைஞர்கள்","தமிழ்நாடு அரசின் திறன் மேம்பாட்டுத் துறையின் அதிகாரப்பூர்வ இணையதளம்: மாநிலத்தின் திறன் பயிற்சித் திட்டங்கள், பயிற்சி மையங்கள், அறிவிப்புகளை ஒரே இடத்தில் அறியலாம்.","உங்களுக்குப் பொருந்தும் திட்டங்களை இந்த இணையதளத்தில் பார்த்து, அங்கு கூறப்பட்டுள்ள வழிமுறையில் விண்ணப்பிக்கவும்."],
+en:["Tamil Nadu Skill Development Department","Students and youth of Tamil Nadu","Official site of the Tamil Nadu government’s skill development department, with the state’s training schemes, centres and announcements in one place.","See which schemes suit you on this site and apply as described there."]},
+{mi:3,tn:1,ar:[1,2,3,4,5,6,7],l:"http://portal.naanmudhalvan.tn.gov.in",
+ta:["நான் முதல்வன் (தமிழ்நாடு)","தமிழ்நாட்டு மாணவர்கள் மற்றும் இளைஞர்கள்","இலவசப் படிப்புகள், தொழில்துறைச் சான்றிதழ்கள், வேலைவாய்ப்பு உதவி வழங்கும் தமிழ்நாடு அரசின் திறன் மேம்பாட்டுத் தளம்.","நான் முதல்வன் தளத்தில் பதிவு செய்யவும்; பொதுவாகப் பள்ளி அல்லது கல்லூரி வழியாகப் பதிவு நடைபெறும்."],
+en:["Naan Mudhalvan (Tamil Nadu)","Students and youth of Tamil Nadu","Tamil Nadu government skilling platform with free courses, industry certifications and placement support.","Register on the Naan Mudhalvan portal, usually through your school or college."]},
+{mi:2,ar:[1,2,3,7],l:"https://ddugky.gov.in",
+ta:["டிடியு-ஜிகேஒய் (கிராமப்புற இளைஞர் திறன் திட்டம்)","ஏழைக் குடும்பங்களைச் சேர்ந்த கிராமப்புற இளைஞர்கள் (வயது வரம்பு உண்டு)","வேலைவாய்ப்புடன் இணைந்த இலவசப் பயிற்சி.","டிடியு-ஜிகேஒய் தளத்தில் பயிற்சி மையங்களையும் தகுதியையும் பார்க்கவும்."],
+en:["DDU-GKY (rural youth skilling)","Rural youth from poor families (age limits apply)","Free training linked to a job placement.","Find training centres and eligibility on the DDU-GKY website."]},
+{mi:1,ar:[5],l:"https://pmvishwakarma.gov.in",
+ta:["பிஎம் விஸ்வகர்மா (பாரம்பரியக் கைவினைஞர்கள்)","தச்சு, மண்பாண்டம், கொல்லர், தையல் போன்ற பாரம்பரியத் தொழிலில் உள்ளவர்கள்","கைவினைஞர்களுக்குத் திறன் பயிற்சி, கருவித்தொகுப்பு உதவி மற்றும் குறைந்த வட்டிக் கடன்.","பிஎம் விஸ்வகர்மா தளத்தில் பதிவு செய்யவும்."],
+en:["PM Vishwakarma (traditional artisans)","Artisans in trades such as carpentry, pottery, blacksmithing and tailoring","Skill training, a toolkit allowance and low-interest loans for artisans.","Register on the PM Vishwakarma portal."]},
+{mi:1,ar:[4],l:"https://kvk.icar.gov.in",
+ta:["கிருஷி விக்யான் கேந்திரா (வேளாண் பயிற்சி)","விவசாயிகள், கிராமப்புற இளைஞர்கள், பெண்கள்","பயிர் சாகுபடி, பால்பண்ணை, கோழி வளர்ப்பு, காளான், மதிப்புக்கூட்டல் உள்ளிட்ட நடைமுறைப் பயிற்சிகள். பெரும்பாலான மாவட்டங்களில் ஒரு KVK உள்ளது.","உங்கள் மாவட்ட KVK-ஐத் தொடர்பு கொள்ளவும்; ICAR KVK தளத்தில் தேடலாம்."],
+en:["Krishi Vigyan Kendra (farm training)","Farmers, rural youth and women","Practical short trainings in crops, dairy, poultry, mushroom, processing and farm skills. Most districts have a KVK.","Contact your district KVK; you can search on the ICAR KVK site."]},
+{mi:3,ar:[6],l:"https://ssc.gov.in",tl:"https://www.tnpsc.gov.in",
+ta:["அரசு வேலைத் தேர்வுகள் (டிஎன்பிஎஸ்சி, எஸ்எஸ்சி, ரயில்வே)","10ஆம் வகுப்புக்கு மேல் (பணியைப் பொறுத்து)","குரூப் IV, குரூப் II, எஸ்எஸ்சி, ரயில்வே தேர்வுகள் நிலையான அரசு வேலைக்கு வழிவகுக்கும். பாடத்திட்டம் மற்றும் முந்தைய வினாத்தாள்களிலிருந்து தொடங்குங்கள்.","அதிகாரப்பூர்வ தளங்களில் அறிவிப்புகளைப் பார்த்து விண்ணப்பிக்கவும்."],
+en:["Government job exams (TNPSC, SSC, Railways)","10th pass and above, depending on the post","Group IV, Group II, SSC and railway exams lead to steady government jobs. Start with the syllabus and previous question papers.","Check notifications and apply on the official exam sites."]},
+{mi:4,ar:[2,1,7],l:"https://swayam.gov.in",
+ta:["ஸ்வயம் / என்பிடிஇஎல் இலவச இணையவழிப் படிப்புகள்","12ஆம் வகுப்புக்குப் பின்","பொறியியல், கணினி, மேலாண்மை உள்ளிட்ட பல்கலைக்கழகத் தரப் படிப்புகள் இலவசம். சான்றிதழ்த் தேர்வு எழுத விரும்பினால் மட்டும் கட்டணம்.","இலவசக் கணக்கைத் தொடங்கி ஸ்வயம் தளத்தில் சேரவும்."],
+en:["SWAYAM / NPTEL free online courses","12th pass and above","Free university-level courses in engineering, computing, management and more. You pay only if you want the certificate exam.","Create a free account and enrol on SWAYAM."]},
+{mi:2,ar:[7,5,4],l:"https://www.kviconline.gov.in/pmegpeportal",
+ta:["பிஎம்இஜிபி (சொந்தத் தொழில் தொடங்க)","புதிய சிறு தொழில் தொடங்கும் 18 வயதுக்கு மேற்பட்டோர்","சிறு உற்பத்தி அல்லது சேவைத் தொழில் தொடங்க அரசு மானியத்துடன் கூடிய வங்கிக் கடன்.","பிஎம்இஜிபி இ-போர்ட்டலில் ஆன்லைனில் விண்ணப்பிக்கவும்."],
+en:["PMEGP (start your own business)","Adults over 18 starting a new small unit","Bank loan with a government subsidy to start a small manufacturing or service unit.","Apply online on the PMEGP e-portal."]}];
+var st={lang:"ta",reg:0,lv:2,ar:0,search:""};
+try{var saved=localStorage.getItem("tv-lang");if(saved==="en"||saved==="ta")st.lang=saved}catch(e){}
+function $(id){return document.getElementById(id)}
+function chips(name,labels,cur){return labels.map(function(label,i){return '<input type="radio" name="'+name+'" id="'+name+i+'" value="'+i+'"'+(i===cur?' checked':'')+'><label for="'+name+i+'">'+label+'</label>'}).join("")}
+function fieldIcon(ar){return ({1:"⚡",2:"💻",3:"🩺",4:"🌾",5:"🧵",6:"🏛️",7:"🚀"})[ar]||"✨"}
+function render(){
+ var t=T[st.lang];document.documentElement.lang=st.lang;
+ $("mark").textContent=t.mark;$("eyebrow").textContent=st.lang==="ta"?"உங்கள் எதிர்காலத்தைத் தேர்ந்தெடுங்கள்":"YOUR FUTURE STARTS HERE";
+ $("h1").textContent=t.h1;$("sub").textContent=t.sub;$("foot").textContent=t.foot;$("cred").textContent=t.cred;
+ $("l1").textContent=t.l1;$("l2").textContent=t.l2;$("l3").textContent=t.l3;
+ $("filterTitle").textContent=st.lang==="ta"?"✨ உங்களுக்கான வாய்ப்புகளைத் தேடுங்கள்":"✨ Find your path";
+ $("pill1").textContent=st.lang==="ta"?"🎯 வாய்ப்புகளைக் கண்டறியுங்கள்":"🎯 Explore opportunities";
+ $("pill2").textContent=st.lang==="ta"?"🌱 எதிர்காலத்தை உருவாக்குங்கள்":"🌱 Build your future";
+ $("search").placeholder=st.lang==="ta"?"பயிற்சி, திட்டம் அல்லது திறனைத் தேடுங்கள்...":"Search courses, schemes or skills...";
+ $("search").value=st.search;
+ $("reset").textContent=st.lang==="ta"?"↺ மீட்டமை":"↺ Reset filters";
+ $("hint").textContent=st.lang==="ta"?"வடிகட்டிகளை மாற்றி மேலும் வாய்ப்புகளைப் பாருங்கள்":"Adjust filters to discover more options";
+ $("c1").innerHTML=chips("reg",t.reg,st.reg);$("c2").innerHTML=chips("lv",t.lv,st.lv);$("c3").innerHTML=chips("ar",t.ar,st.ar);
+ $("bta").setAttribute("aria-pressed",st.lang==="ta");$("ben").setAttribute("aria-pressed",st.lang==="en");
+ var tn=st.reg===0,lvl=st.lv+1,term=st.search.trim().toLocaleLowerCase();
+ var r=P.filter(function(p){
+   if(!(lvl>=p.mi&&(tn||!p.tn)&&(st.ar===0||p.ar.indexOf(st.ar)>-1)))return false;
+   if(!term)return true;
+   return p[st.lang].join(" ").toLocaleLowerCase().indexOf(term)>-1;
+ });
+ r.sort(function(a,b){return (tn?(b.tn||0)-(a.tn||0):0)||a.mi-b.mi});
+ $("count").textContent=st.lang==="ta"?r.length+" வாய்ப்புகள் உங்களுக்காக":r.length+(r.length===1?" opportunity for you":" opportunities for you");
+ $("list").innerHTML=r.length?r.map(function(p){
+   var c=p[st.lang],link=(tn&&p.tl)||p.l,how=(tn&&c[4])||c[3],icon=fieldIcon(p.ar[0]);
+   return '<article class="card">'+(p.tn?'<span class="badge">✦ '+t.tn+'</span>':'')+
+   '<div class="card-top"><span class="card-icon">'+icon+'</span><h2>'+c[0]+'</h2></div>'+
+   '<p class="who">'+t.who+c[1]+'</p><p class="description">'+c[2]+'</p>'+
+   '<p class="how">💬 '+how+'</p>'+
+   (link?'<a class="go" href="'+link+'" target="_blank" rel="noopener noreferrer">'+t.go+' <span aria-hidden="true">↗</span></a>':'')+'</article>';
+ }).join(""):'<div class="empty"><span class="empty-icon">🧭</span><strong>'+t.empty+'</strong></div>';
+}
+document.addEventListener("change",function(e){
+ var n=e.target.name;if(n==="reg")st.reg=+e.target.value;else if(n==="lv")st.lv=+e.target.value;else if(n==="ar")st.ar=+e.target.value;else return;render();
+});
+$("search").addEventListener("input",function(e){st.search=e.target.value;render();var el=$("search");el.focus();el.setSelectionRange(st.search.length,st.search.length)});
+function setLang(l){st.lang=l;try{localStorage.setItem("tv-lang",l)}catch(e){}render()}
+$("bta").onclick=function(){setLang("ta")};$("ben").onclick=function(){setLang("en")};
+$("reset").onclick=function(){st.reg=0;st.lv=2;st.ar=0;st.search="";render()};
+render();
+</script>
+</body>
+</html>
